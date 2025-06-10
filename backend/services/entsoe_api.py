@@ -5,7 +5,7 @@ import datetime
 from . import data_store # Import the cache module
 
 # Replace with your actual ENTSO-E API key
-API_TOKEN = "YOUR_ENTSOE_API_KEY_HERE" # IMPORTANT: Replace with a real key for actual calls
+API_TOKEN = "6fd02047-1026-45e4-adfc-0471d477ffc0" # IMPORTANT: Replace with a real key for actual calls
 BASE_URL = "https://transparency.entsoe.eu/api"
 DEFAULT_CACHE_TTL_ENTSOE = 15 * 60 # 15 minutes for ENTSO-E data
 
