@@ -1,6 +1,8 @@
 # backend/main.py
 from fastapi import FastAPI
-from api import routes_data, routes_simulation # Ensure this line is present and correct
+# Import the API routes using a relative import so ``backend`` can be treated
+# as a package without adjusting ``PYTHONPATH``.
+from .api import routes_data, routes_simulation
 
 app = FastAPI(title="EnergySim API", description="API för elproduktionssimulering", version="1.0")
 

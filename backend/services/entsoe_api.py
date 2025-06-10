@@ -4,8 +4,9 @@ import datetime
 # import xml.etree.ElementTree as ET
 from . import data_store # Import the cache module
 
-# Replace with your actual ENTSO-E API key
-API_TOKEN = "YOUR_ENTSOE_API_KEY_HERE" # IMPORTANT: Replace with a real key for actual calls
+# Replace with your actual ENTSO-E API key. A valid key allows real calls to the
+# ENTSO-E Transparency API. Without it, the service falls back to dummy data.
+API_TOKEN = "6fd02047-1026-45e4-adfc-0471d477ffc0"
 BASE_URL = "https://transparency.entsoe.eu/api"
 DEFAULT_CACHE_TTL_ENTSOE = 15 * 60 # 15 minutes for ENTSO-E data
 
@@ -85,9 +86,9 @@ def fetch_current_data(region: str, use_cache: bool = True) -> dict:
         "securityToken": API_TOKEN
     }
 
-    # This is where the actual API call would happen.
-    # For now, we'll simulate it and return dummy data if API_TOKEN is placeholder.
-    if API_TOKEN == "YOUR_ENTSOE_API_KEY_HERE" or not API_TOKEN:
+    # This is where the actual API call would happen. If no API key is provided
+    # the service falls back to dummy data instead of making a real request.
+    if not API_TOKEN:
         print("ENTSO-E API: API_TOKEN not configured. Returning dummy data instead of making a real call.")
         api_data = parse_entsoe_generation_xml("", region_for_dummy=region) # Pass region to dummy parser
         api_data["message"] = "Dummy data because ENTSO-E API key is not set."

@@ -1,6 +1,8 @@
 # backend/api/routes_data.py
 from fastapi import APIRouter, HTTPException
-from services import entsoe_api # Uncommented to allow import
+# Relative import so tests that import ``backend`` work without modifying
+# ``PYTHONPATH``.
+from ..services import entsoe_api
 
 router = APIRouter()
 
