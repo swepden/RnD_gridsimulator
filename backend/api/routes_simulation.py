@@ -1,7 +1,9 @@
 # backend/api/routes_simulation.py
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from services import simulation # Ensure this service is imported
+# Use a relative import so the module works when the package is imported as
+# ``backend`` from the project root.
+from ..services import simulation
 from typing import Optional
 
 router = APIRouter()

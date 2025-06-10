@@ -80,7 +80,7 @@ energy-sim-tool/
     *   Alternative API documentation (ReDoc): `http://localhost:8000/redoc`
 
     **Note on API Keys**:
-    *   The `backend/services/entsoe_api.py` file has a placeholder `API_TOKEN = "YOUR_ENTSOE_API_KEY_HERE"`. For actual ENTSO-E API calls, you need to replace this with your valid ENTSO-E API key. Otherwise, it will return dummy data.
+    *   The `backend/services/entsoe_api.py` file now contains an example ENTSO‑E key (`6fd02047-1026-45e4-adfc-0471d477ffc0`). Replace it with your own key if needed or leave it empty to fall back to dummy data.
     *   Similar placeholders or dummy data mechanisms are in place for weather APIs.
 
 ### Frontend (React)
